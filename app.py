@@ -4,7 +4,7 @@ import json
 
 app = Flask(__name__)
 
-API_KEY = "d66a1fbc0ce373208c778a2645cce0dc"   # Put your API key here
+API_KEY = "api key"   # Put your API key here
 
 @app.route("/", methods=["GET", "POST"])
 def home():
