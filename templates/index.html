@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+</head>
+<body style="text-align:center; font-family:Arial; padding:40px;">
+
+    <h2>Weather App</h2>
+
+    <form method="POST">
+        <input type="text" name="city" placeholder="Enter city (Hyderabad,IN)" required>
+        <button type="submit">Search</button>
+    </form>
+
+    {% if weather %}
+        <h3>{{ weather.city }}</h3>
+        <img src="http://openweathermap.org/img/wn/{{ weather.icon }}@2x.png">
+        <p>Temperature: {{ weather.temperature }} °C</p>
+        <p>{{ weather.description }}</p>
+        <p>Humidity: {{ weather.humidity }}%</p>
+        <p>Wind Speed: {{ weather.wind }} m/s</p>
+    {% endif %}
+
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+
+</body>
+</html>
